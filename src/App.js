@@ -4,15 +4,11 @@ import './App.css';
 
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      counter: 0
-    }
-    this.handleClick = this.handleClick.bind(this);
+  state = { // ES7 Property Initializer
+    counter: 0
   }
 
-  handleClick() {
+  handleClick = () => { // Changed this to a fat arrow function so we don't have to bind this
     console.log('btn clicked!');
     this.setState({
       counter: this.state.counter + 1
